@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 18:21:07 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 20:44:27 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:01:12 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@ int	ft_line_occ(char c, char *str, int x);
 
 int ft_col_occ(char c, char **tab, int x, int y);
 
-int ft_bloc_occ(char c, char **tab, int x, int y);
+int ft_bloc_occ(char **tab, int x, int y);
 
 int	ft_occ_test(char **tab, int x, int y)
 {
 	if (ft_line_occ(tab[y][x], tab[y], x) == 0
 		&& ft_col_occ(tab[y][x], tab, x, y) == 0
-		&& ft_bloc_occ(tab[x][y], tab, x, y) == 0)
+		&& ft_bloc_occ(tab, x, y) == 0)
 		return (1);
 	return (0);
 }

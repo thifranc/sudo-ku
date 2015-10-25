@@ -6,17 +6,17 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 10:16:36 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 20:32:04 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:05:46 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_sudoku(char **tab, int x, int y);
+int		ft_sudoku(char **tab, int x, int y);
 
-int	ft_size_test(char **tab);
+int		ft_size_test(char **tab);
 
-int	ft_char_test(char **tab);
+int		ft_char_test(char **tab);
 
 void	ft_write(char **tab)
 {
@@ -38,7 +38,7 @@ void	ft_write(char **tab)
 	}
 }
 
-int	main(int argc, char** argv)
+int		main(int argc, char **argv)
 {
 	if (argc != 10)
 	{
@@ -61,5 +61,5 @@ int	main(int argc, char** argv)
 		return (0);
 	}
 	else
-	ft_write(argv);
+		ft_write(argv);
 }

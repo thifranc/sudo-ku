@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 09:28:27 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 20:30:22 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:05:22 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_sudoku(char **tab, int x, int y);
 int	ft_global_test(char **tab, int x, int y, char c)
 {
 	if (ft_line_test(c, tab[y]) == 0
-		&& ft_col_test(c, tab, x) == 0 
+		&& ft_col_test(c, tab, x) == 0
 		&& ft_bloc_test(c, tab, x, y) == 0)
 	{
 		tab[y][x] = c;
@@ -38,23 +38,23 @@ int	ft_global_test(char **tab, int x, int y, char c)
 	return (0);
 }
 
-int	ft_last_case(char **tab, int x,  int y)
+int	ft_last_case(char **tab, int x, int y)
 {
 	char c;
 
 	c = '1';
 	if (x == 8 && y == 9)
-	while (c <= '9')
-	{
-		if (ft_line_test(c, tab[y]) == 0
-			&& ft_col_test(c, tab, x) == 0 
-			&& ft_bloc_test(c, tab, x, y) == 0)
+		while (c <= '9')
 		{
-			tab[y][x] = c;
-			return (1);
+			if (ft_line_test(c, tab[y]) == 0
+				&& ft_col_test(c, tab, x) == 0
+				&& ft_bloc_test(c, tab, x, y) == 0)
+			{
+				tab[y][x] = c;
+				return (1);
 			}
 			c++;
-	}
+		}
 	return (0);
 }
 
@@ -84,7 +84,7 @@ int	ft_sudoku(char **tab, int x, int y)
 		return (1);
 	while (c <= '9')
 	{
-		if(ft_global_test(tab, x, y, c) == 1)
+		if (ft_global_test(tab, x, y, c) == 1)
 			return (1);
 		c++;
 	}
