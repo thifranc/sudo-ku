@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.c                                          :+:      :+:    :+:   */
+/*   ft_occurrence.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/25 10:10:46 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 18:59:55 by thifranc         ###   ########.fr       */
+/*   Created: 2015/10/25 19:15:45 by thifranc          #+#    #+#             */
+/*   Updated: 2015/10/25 20:45:00 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_line_test(char c, char *str)
+int	ft_line_occ(char c, char *str, int x)
 {
-	int x;
-
-	x = 0;
+	x += 1;
 	while (x <= 8)
 	{
 		if (str[x] == c)
@@ -26,11 +22,9 @@ int	ft_line_test(char c, char *str)
 	return (0);
 }
 
-int	ft_col_test(char c, char **tab, int x)
+int	ft_col_occ(char c, char **tab, int x, int y)
 {
-	int y;
-
-	y = 1;
+	y += 1;
 	while (y <= 9)
 	{
 		if (tab[y][x] == c)
@@ -40,7 +34,7 @@ int	ft_col_test(char c, char **tab, int x)
 	return (0);
 }
 
-int	ft_bloc_test(char c, char **tab, int x, int y)
+int	ft_bloc_occ(char c, char **tab, int x, int y)
 {
 	int xb;
 	int yb;

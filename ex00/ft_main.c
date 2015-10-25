@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 10:16:36 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 15:41:55 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 20:32:04 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,9 @@
 
 int	ft_sudoku(char **tab, int x, int y);
 
-int ft_char_test(char **tab)
-{
-	int x;
-	int y;
+int	ft_size_test(char **tab);
 
-	y = 1;
-	while (y <= 9)
-	{
-		x = 0;
-		while (x <= 8)
-		{
-			if (tab[y][x] != '.' && tab[y][x] < '1' && tab[y][x] > '9')
-				return (0);
-			x++;
-		}
-		y++;
-	}
-	return (1);
-}
-
-int	ft_size_test(char **tab)
-{
-	int x;
-	int y;
-
-	y = 1;
-	while (y <= 9)
-	{
-		x = 0;
-		while (tab[y][x] != '\0')
-		{
-			x++;
-		}
-		if (x > 9 || x < 8)
-			return (0);
-	y++;
-	}
-	return (1);
-}
+int	ft_char_test(char **tab);
 
 void	ft_write(char **tab)
 {
