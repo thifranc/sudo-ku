@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 09:28:27 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 22:10:12 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 22:15:41 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,16 @@ int	ft_last_case(char **tab, int x, int y)
 	return (0);
 }
 
-int		ft_nb_test(char **tab, int *x, int *y)
+int	ft_nb_test(char **tab, int *x, int *y)
 {
-	if (tab[*y][*x] != '.')
+	if (*x == 8)
 	{
-		if (*x == 8)
-		{
-			*x = 0;
-			(*y)++;
-		}
-		else 
-			(*x)++;
+		*x = 0;
+		(*y)++;
 	}
-	return(ft_sudoku(tab, *x,*y));
+	else
+		(*x)++;
+	return (ft_sudoku(tab, *x, *y));
 }
 
 int	ft_sudoku(char **tab, int x, int y)
@@ -79,7 +76,7 @@ int	ft_sudoku(char **tab, int x, int y)
 	if (x == 8 && y == 9)
 		return (ft_last_case(tab, 8, 9));
 	if (tab[y][x] != '.')
-		return(ft_nb_test(tab, &x,&y));
+		return (ft_nb_test(tab, &x, &y));
 	while (c <= '9')
 	{
 		if (ft_global_test(tab, x, y, c) == 1)
