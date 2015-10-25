@@ -6,11 +6,11 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 18:21:07 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 21:01:12 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:27:32 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_line_occ(char c, char *str, int x);
+int ft_line_occ(char c, char *str, int x);
 
 int ft_col_occ(char c, char **tab, int x, int y);
 
@@ -53,7 +53,7 @@ int	ft_size_test(char **tab)
 
 	y = 1;
 	count = 0;
-	while (y <= 9)
+	while (++y <= 9)
 	{
 		x = 0;
 		while (x <= 8)
@@ -66,7 +66,6 @@ int	ft_size_test(char **tab)
 			}
 			x++;
 		}
-		y++;
 		if (x > 9 || x < 8)
 			return (0);
 	}
