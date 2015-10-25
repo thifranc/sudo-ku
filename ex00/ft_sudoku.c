@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 09:28:27 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 21:42:32 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 22:10:12 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,19 @@ int	ft_last_case(char **tab, int x, int y)
 	return (0);
 }
 
-int	ft_nb_test(char **tab, int x, int y)
+int		ft_nb_test(char **tab, int *x, int *y)
 {
-	if (tab[y][x] != '.')
+	if (tab[*y][*x] != '.')
 	{
-		if (x == 8)
+		if (*x == 8)
 		{
-			if (ft_sudoku(tab, 0, y + 1) == 1)
-				return (1);
+			*x = 0;
+			(*y)++;
 		}
-		else if (ft_sudoku(tab, x + 1, y) == 1)
-			return (1);
+		else 
+			(*x)++;
 	}
-	return (0);
+	return(ft_sudoku(tab, *x,*y));
 }
 
 int	ft_sudoku(char **tab, int x, int y)
@@ -78,8 +78,8 @@ int	ft_sudoku(char **tab, int x, int y)
 	c = '1';
 	if (x == 8 && y == 9)
 		return (ft_last_case(tab, 8, 9));
-	if (ft_nb_test(tab, x, y) == 1)
-		return (1);
+	if (tab[y][x] != '.')
+		return(ft_nb_test(tab, &x,&y));
 	while (c <= '9')
 	{
 		if (ft_global_test(tab, x, y, c) == 1)
