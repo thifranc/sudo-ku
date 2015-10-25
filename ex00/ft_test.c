@@ -6,11 +6,9 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 10:10:46 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 21:17:43 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:42:40 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_line_test(char c, char *str)
 {

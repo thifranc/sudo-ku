@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/25 10:16:36 by thifranc          #+#    #+#             */
-/*   Updated: 2015/10/25 21:05:46 by thifranc         ###   ########.fr       */
+/*   Updated: 2015/10/25 21:42:18 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,22 @@ int		main(int argc, char **argv)
 {
 	if (argc != 10)
 	{
-		write(1, "Erreur1\n", 8);
+		write(1, "Erreur\n", 7);
 		return (0);
 	}
 	if (ft_size_test(argv) == 0)
 	{
-		write(1, "Erreur2\n", 8);
+		write(1, "Erreur\n", 7);
 		return (0);
 	}
 	if (ft_char_test(argv) == 0)
 	{
-		write(1, "Erreur3\n", 8);
+		write(1, "Erreur\n", 7);
 		return (0);
 	}
 	else if (ft_sudoku(argv, 0, 1) == 0)
 	{
-		write(1, "Erreur4\n", 8);
+		write(1, "Erreur\n", 7);
 		return (0);
 	}
 	else
